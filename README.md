@@ -35,11 +35,26 @@ You need to install [UV](https://docs.astral.sh/uv/) at first
 
 > The results of the 3 CFGs above are saved in the folder `Result/`.
 
+Run the following command to draw the CFGs:
+
+```bash
+python main.py
+
 ### Tool files for detecting Swap patterns
 
 - `find_call_nodes.py` extracts the nodes containing `"CALL"` and `"SSTORE"` from the (dynamic) contract CFG.  
   The results are saved in the folder `Result_call_nodes/`.
 
+  Run the following command to extract the nodes:
+
+```bash
+python find_call_nodes.py
+
 - `find_trace_opcode.py` extracts the steps with opcodes `"CALL"` or `"SSTORE"` from the execution trace.  
   It first targets a certain contract in a transaction, and then extracts the relevant steps.  
   The results are saved in the folder `Result_call_sstore/`.
+
+Run the following command to extract the steps:
+
+```bash
+python find_trace_opcode.py
