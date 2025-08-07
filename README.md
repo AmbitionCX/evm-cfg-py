@@ -39,6 +39,7 @@ Run the following command to draw the CFGs:
 
 ```bash
 python main.py
+```
 
 ### Tool files for detecting Swap patterns
 
