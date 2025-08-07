@@ -49,6 +49,7 @@ python main.py
 
 ```bash
 python find_call_nodes.py
+```
 
 - `find_trace_opcode.py` extracts the steps with opcodes `"CALL"` or `"SSTORE"` from the execution trace.  
   It first targets a certain contract in a transaction, and then extracts the relevant steps.  
@@ -58,3 +59,4 @@ Run the following command to extract the steps:
 
 ```bash
 python find_trace_opcode.py
+```
