@@ -18,3 +18,28 @@ You need to install [UV](https://docs.astral.sh/uv/) at first
 - `uv lock`: Create a lockfile for the project's dependencies.
 - `uv run`: Run a command in the project environment.
 - `uv tree`: View the dependency tree for the project.
+
+## What each file does
+
+`main.py`, `evm_information.py`, `basic_block.py`, `cfg_transaction.py`, `cfg_contract.py`, and `cfg_static_complete.py` are the main files for this project.
+
+- `evm_information.py` retrieves and standardizes execution traces and contract bytecode from an Ethereum node, serving as a clean data interface for downstream analysis.
+
+- `basic_block.py` splits EVM bytecode into basic blocks, enabling structural analysis of smart contract execution.
+
+- `cfg_transaction.py` draws the transaction execution CFG of a certain transaction.
+
+- `cfg_contract.py` draws the contract CFG of the executed path of a certain contract.
+
+- `cfg_static_complete.py` draws the static CFG of a certain contract.
+
+> The results of the 3 CFGs above are saved in the folder `Result/`.
+
+### Tool files for detecting Swap patterns
+
+- `find_call_nodes.py` extracts the nodes containing `"CALL"` and `"SSTORE"` from the (dynamic) contract CFG.  
+  The results are saved in the folder `Result_call_nodes/`.
+
+- `find_trace_opcode.py` extracts the steps with opcodes `"CALL"` or `"SSTORE"` from the execution trace.  
+  It first targets a certain contract in a transaction, and then extracts the relevant steps.  
+  The results are saved in the folder `Result_call_sstore/`.
